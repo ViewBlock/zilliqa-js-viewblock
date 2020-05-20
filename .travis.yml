@@ -1,0 +1,13 @@
+language: node_js
+node_js:
+  - 10
+  - 12
+  - 14
+before_install:
+  - yarn config set ignore-engines true
+script:
+  - yarn lint
+  - yarn report
+env:
+  global:
+    secure: fZnsFvSny6a5Zag9xW36z7eSUl4CVI17gI7cpgULpzvEYe4aj5KTB82y9v6oIxhuvkgxVQpcsKstt6MNn2dEaTcfDE0O12uqPNNHmVEHiw0N9FSGeJEWgnJJSR3yx8noiZ4d5PDqqixV7acIcXRXfPTpy91Dne/EAf0Apj6fRxWg/P3W5UaZFIt8x7/vCAo1QYMo4YBWrvp3LlCFiRnc5Mc5ilB3RsOIbQp964slEWRSrKXVwKBeqZW5m1QSIv8abtD9OI3aV19TKYxKoP0TUKIf6bdQG8QNKgmUlij2YDIu8/gHIE3Gr5ovE9lxHL8IEdzDX4mehXgH0tEjZbucK2SbWhDET44uQI48xaoy8RT2FVRC5jCmGcOlh+6q8EJFF9lBnVkXmOnOY6KQAZMFGFWpOZFE2yMI/0KhTg1ZA0mY23ZO1rhdeDcKU3YOGFNBKDdPHa2ooXRSkVmllAy7KTk3XBPGSShFrM2S7IHeZH5dp+xWjiNKoKXMJlt+qGZTv8wBRucLBUG4SqsaDFCMhQisiRYa6eXDj3BUh82RYifr1nqu1IV8LD4OipV74GxVhFua/NLqqtqUJGVuJIoF2Ok63u7UjuS6PHG/UzM9/9lk8g5NonObXFlwbkZHsqiVFxAHK36PWOh1mZDTQSDrjMlgvGNtyL5Lhezy6jSfQD0=

@@ -1,0 +1,46 @@
+{
+  "name": "@zilliqa-js/viewblock",
+  "version": "0.0.1",
+  "main": "dist",
+  "scripts": {
+    "prepare": "yarn build",
+    "build": "rm -rf dist && babel src -d dist",
+    "test": "ava --timeout=10s -v",
+    "lint": "eslint src test",
+    "cover": "nyc ava",
+    "report": "yarn cover && nyc report --reporter=text-lcov | coveralls"
+  },
+  "dependencies": {
+    "@zilliqa-js/crypto": "^0.9.1",
+    "node-fetch": "^2.6.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.8.4",
+    "@babel/core": "^7.9.6",
+    "@babel/polyfill": "^7.8.7",
+    "@babel/preset-env": "^7.9.6",
+    "@babel/register": "^7.9.0",
+    "ava": "^3.8.2",
+    "babel-eslint": "^10.1.0",
+    "coveralls": "^3.1.0",
+    "dotenv": "^8.2.0",
+    "eslint": "^7.0.0",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-config-zavatta": "^6.0.3",
+    "nyc": "^15.0.1",
+    "prettier": "^2.0.5"
+  },
+  "ava": {
+    "require": [
+      "dotenv/config",
+      "@babel/register",
+      "@babel/polyfill"
+    ],
+    "files": [
+      "test/**/*",
+      "!test/utils.js"
+    ]
+  },
+  "author": "Balthazar Gronon <b@ashlar.io>",
+  "license": "MIT"
+}
