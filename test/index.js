@@ -38,6 +38,9 @@ test('[Transaction] getTx', async t => {
     nonce: 1,
     receiptSuccess: true,
     events: [],
+    internalTransfers: [],
+    data: null,
+    transitions: [],
   })
 })
 
@@ -69,6 +72,9 @@ test('[Block] getBlockTxs', async t => {
     nonce: 1,
     receiptSuccess: true,
     events: [],
+    internalTransfers: [],
+    data: null,
+    transitions: [],
   })
 
   const next = await client.getBlockTxs(BLOCK_HEIGHT, { page: 2 })
@@ -87,6 +93,9 @@ test('[Block] getBlockTxs', async t => {
     nonce: 1,
     receiptSuccess: true,
     events: [],
+    internalTransfers: [],
+    data: null,
+    transitions: [],
   })
 })
 
@@ -141,6 +150,10 @@ test('[Address] getAddressTxs', async t => {
       nonce: 4,
       receiptSuccess: true,
       events: [],
+      internalTransfers: [],
+      data:
+        '[{"vname":"_scilla_version","type":"Uint32","value":"0"},{"vname":"contractOwner","type":"ByStr20","value":"0xb826575569544c7f9afa65a92616fc0adf03d119"}]',
+      transitions: [],
     },
     {
       hash: '0x236fbf86726c0c93c735e4730cebaaea050286da3e5ee5706153a1fbd8dd1bb6',
@@ -156,6 +169,10 @@ test('[Address] getAddressTxs', async t => {
       nonce: 3,
       receiptSuccess: true,
       events: [],
+      internalTransfers: [],
+      data:
+        '[{"vname":"_scilla_version","type":"Uint32","value":"0"},{"vname":"contractOwner","type":"ByStr20","value":"0xb826575569544c7f9afa65a92616fc0adf03d119"}]',
+      transitions: [],
     },
     {
       hash: '0xcbeb9c32b16e6eddf74bba1fa6403298dba46f6083ab90593437d3a81579377d',
@@ -171,6 +188,10 @@ test('[Address] getAddressTxs', async t => {
       nonce: 2,
       receiptSuccess: true,
       events: [],
+      internalTransfers: [],
+      data:
+        '[{"vname":"_scilla_version","type":"Uint32","value":"0"},{"vname":"contractOwner","type":"ByStr20","value":"0xb826575569544c7f9afa65a92616fc0adf03d119"}]',
+      transitions: [],
     },
     {
       hash: '0x99fdf3b323b446125bfd7cdef4347c77b7fd7594de8a6486a1b0aa28f3baf39d',
@@ -186,6 +207,10 @@ test('[Address] getAddressTxs', async t => {
       nonce: 1,
       receiptSuccess: true,
       events: [],
+      internalTransfers: [],
+      data:
+        '[{"vname":"_scilla_version","type":"Uint32","value":"0"},{"vname":"contractOwner","type":"ByStr20","value":"0xb826575569544c7f9afa65a92616fc0adf03d119"}]',
+      transitions: [],
     },
     {
       hash: '0x9aa24045971adffe1eb97245f115babb0bbc1eb5fee1fd574c5264f584b101a4',
@@ -201,6 +226,9 @@ test('[Address] getAddressTxs', async t => {
       nonce: 6,
       receiptSuccess: true,
       events: [],
+      internalTransfers: [],
+      data: null,
+      transitions: [],
     },
   ])
 

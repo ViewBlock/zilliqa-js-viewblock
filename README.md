@@ -91,19 +91,22 @@ await client.getTx('0x65fd90f1fc2d3b631a0cf6a77be9947e9f4559d9ece9b9a1eef170d593
 <summary>Output</summary>
 
 ```js
-{                                                                
-  hash: '0x65fd90f1fc2d3b631a0cf6a77be9947e9f4559d9ece9b9a1eef170d593bd9213', 
-  blockHeight: 577008,                                                           
-  from: 'zil1kshhphza3vlyfamjchamk2d3j022a55kn6es38',                            
-  to: 'zil1z3zky3kv20f37z3wkq86qfy00t4a875fxxw7sw',                              
-  value: '29000000000000',                                                       
-  fee: '1000000000',                                                             
-  timestamp: 1590005268574,                                                      
-  signature:                                                                     
-      '0xEA74CF5062954368ECBEB9EA00014C9F78590391703E0DCEF002FAB50D30C1147D84BDC8A1703A33181CD3BDE315E6B28627EB0266DCD0D3CB886130B06312D1',
-  nonce: 1,                                                                      
-  receiptSuccess: true,                                                          
-  events: [],                                                                    
+{
+  hash: '0x65fd90f1fc2d3b631a0cf6a77be9947e9f4559d9ece9b9a1eef170d593bd9213',
+  blockHeight: 577008,
+  from: 'zil1kshhphza3vlyfamjchamk2d3j022a55kn6es38',
+  to: 'zil1z3zky3kv20f37z3wkq86qfy00t4a875fxxw7sw',
+  value: '29000000000000',
+  fee: '1000000000',
+  timestamp: 1590005268574,
+  signature:
+    '0xEA74CF5062954368ECBEB9EA00014C9F78590391703E0DCEF002FAB50D30C1147D84BDC8A1703A33181CD3BDE315E6B28627EB0266DCD0D3CB886130B06312D1',
+  nonce: 1,
+  receiptSuccess: true,
+  data: null,
+  internalTransfers: [],
+  events: [],
+  transitions: []
 }
 ```
 
@@ -179,7 +182,7 @@ Get the transactions made by an address.
 | page     | `Number` | `false`  | `1`       |
 
 ```js
-await client.getAddressTxs('zil1fd32gvyfk224mh8fuffnh3d5wpujw4rjpqy4f6', { page: 1 })
+await client.getAddressTxs('zil16awfafxs789g8nthnm5s9p4l8vnxs5zpfr3upr', { page: 1 })
 ```
 
 <details>
@@ -187,33 +190,124 @@ await client.getAddressTxs('zil1fd32gvyfk224mh8fuffnh3d5wpujw4rjpqy4f6', { page:
 
 ```js
 {
-  docs: [{
-    hash: '0x9067cd5916f968828203ad71be1a4981f7e67f68206f49c868158c6878061291',
-    blockHeight: 574086,
-    from: 'zil1uqq7gatsz8r2p0ks5nylcksxz329n0zyw9yecy',
-    to: 'zil1fd32gvyfk224mh8fuffnh3d5wpujw4rjpqy4f6',
-    value: '49480160397840000',
-    fee: '2000000000',
-    timestamp: 1589860302067,
-    signature: '0xC77DB01030EDF5ECE6CCCB4A6CB957B55AB28F9E48BFE53CB5156B828511AE9D70D0A7682AB6D05D6530A35916674A1A181F5BA84C770ACADB0A74359AA61538',
-    direction: 'in',
-    nonce: 356,
-    receiptSuccess: true,
-    events: []
-  }, {
-    hash: '0x1a9cd06e69dbc7909c61c9618e495e39a6c7adc1131797a15cfc00ba341e80a6',
-    blockHeight: 551639,
-    from: 'zil1uqq7gatsz8r2p0ks5nylcksxz329n0zyw9yecy',
-    to: 'zil1fd32gvyfk224mh8fuffnh3d5wpujw4rjpqy4f6',
-    value: '1000000000000',
-    fee: '2000000000',
-    timestamp: 1588770078879,
-    signature: '0xFA6F7ABDFC4C8B917DE32FDB2009EB641EC1964477FC4C33E8E5838282F7ED3C6C6D595EB728ED544AD85817AFB056F8725F36144E78F13D24FA05B95AE7CA07',
-    direction: 'in',
-    nonce: 191,
-    receiptSuccess: true,
-    events: []
-  }],
+  docs: [
+    {
+      hash: '0xced4731d535e1b0ba72d562d6c1dfd0ef71d1189abfa1ead8341667ca22aa01b',
+      blockHeight: 1128974,
+      from: 'zil15wglkgh0vht9zeaqe9x4axmw4nkw2mr79z6g3x',
+      to: 'zil16awfafxs789g8nthnm5s9p4l8vnxs5zpfr3upr',
+      value: '25000000000000',
+      fee: '3026000000000',
+      timestamp: 1581304554974,
+      signature:
+        '0x2E293AB15F747F90292D1262731DCD597008C456266E654466823728F92BDC6F6FB7E819C9A1518DA827C0031E1A7DD349FA920B04C420359053808E3E177648',
+      direction: 'in',
+      nonce: 312,
+      receiptSuccess: true,
+      data: '{"_tag": "request", "params": []}',
+      internalTransfers: [
+        {
+          from: 'zil16awfafxs789g8nthnm5s9p4l8vnxs5zpfr3upr',
+          to: 'zil1mejpsqd5cw589xyq3llzvrk0nvetm9v0l5kcn7',
+          value: '25000000000000',
+          direction: 'in',
+          depth: '0,0',
+        },
+      ],
+      events: [
+        {
+          address: 'zil1mejpsqd5cw589xyq3llzvrk0nvetm9v0l5kcn7',
+          name: 'request',
+          details:
+            'request (String msg, Uint32 id, ByStr20 from, Uint32 reqtype, Uint128 gaslimit, Uint128 gasprice, String paramdata, Uint128 fee)',
+          params: {
+            msg: 'send request success',
+            id: '10',
+            from: '0xa391fb22ef65d65167a0c94d5e9b6eacece56c7e',
+            reqtype: '1',
+            gaslimit: '20000',
+            gasprice: '1000000000',
+            paramdata:
+              "{'url':'https://samples.openweathermap.org/data/2.5/weather',\n    'params':{'q':'London,uk','appid':'b6907d289e10d714a6e88b30761fae22'}}",
+            fee: '3999000000000',
+          },
+        },
+      ],
+      transitions: [
+        {
+          addr: '0xd75c9ea4d0f1ca83cd779ee90286bf3b26685041',
+          depth: 0,
+          msg: {
+            _amount: '25000000000000',
+            _recipient: '0xde641801b4c3a87298808ffe260ecf9b32bd958f',
+            _tag: 'request',
+            params: [
+              {
+                type: 'ByStr20',
+                value: '0xa391fb22ef65d65167a0c94d5e9b6eacece56c7e',
+                vname: 'user_addr',
+              },
+              {
+                type: 'Uint32',
+                value: '1',
+                vname: 'request_type',
+              },
+              {
+                type: 'String',
+                value:
+                  "{'url':'https://samples.openweathermap.org/data/2.5/weather',\n    'params':{'q':'London,uk','appid':'b6907d289e10d714a6e88b30761fae22'}}",
+                vname: 'param_data',
+              },
+              {
+                type: 'Uint128',
+                value: '1000000000',
+                vname: 'gas_price',
+              },
+              {
+                type: 'Uint128',
+                value: '20000',
+                vname: 'gas_limit',
+              },
+              {
+                type: 'String',
+                value: 'callback',
+                vname: 'callback_func',
+              },
+            ],
+          },
+        },
+        {
+          addr: '0xde641801b4c3a87298808ffe260ecf9b32bd958f',
+          depth: 1,
+          msg: {
+            _amount: '25000000000000',
+            _recipient: '0xc4818b8c0d0c2ae775e8ed1998d72c7aa0743063',
+            _tag: '',
+            params: [],
+          },
+        },
+      ],
+    },
+    {
+      hash: '0x6bc8fcd7a14bef419eae03d8d9ac68de0bcc279a50a86fe3a00c24d99833c5e3',
+      blockHeight: 1064704,
+      from: 'zil10h9339zp277h8gmdhds6zuq0elgpsf5qga4qvh',
+      to: 'zil16awfafxs789g8nthnm5s9p4l8vnxs5zpfr3upr',
+      value: '0',
+      fee: '2590000000000',
+      timestamp: 1579266403473,
+      signature:
+        '0x5A72F6B4826EBCE69F62DB2D85991D780A54ED4C459BB0732EB1F8B2C77DDE8F2B3DB6F022797561809E30310E830E755A98EDAE526F96675A76137815BBF81C',
+      direction: 'in',
+      nonce: 208,
+      receiptSuccess: true,
+      data:
+        '[{"vname": "_scilla_version", "type": "Uint32", "value": "0"}, {"vname": "owner", "type": "ByStr20", "value": "0x7dcb18944157bd73a36dbb61a1700fcfd0182680"}]',
+      internalTransfers: [],
+      events: [],
+      transitions: [],
+    },
+  ],
   page: 1,
   totalPages: 1,
   total: 2,
@@ -469,7 +563,10 @@ await client.getBlockTxs(59903, { page: 1 })
       timestamp: 1554172478877,
       nonce: 1,
       receiptSuccess: true,
-      events: []
+      events: [],
+      data: null,
+      internalTransfers: [],
+      transitions: []
     },
     {
       hash: '0xfd816a3d5118d7a21e4a56d2c91f06a30315e0ba8851cfdaf6b9a6c61fc524fd',
@@ -480,7 +577,10 @@ await client.getBlockTxs(59903, { page: 1 })
       timestamp: 1554172478877,
       nonce: 1,
       receiptSuccess: true,
-      events: []
+      events: [],
+      data: null,
+      internalTransfers: [],
+      transitions: []
     },
     {
       hash: '0xfd0448f629b93038b5e4cddd51d2b90f9682882cd40ef3ee465bc4f0e55e357b',
@@ -491,7 +591,10 @@ await client.getBlockTxs(59903, { page: 1 })
       timestamp: 1554172478877,
       nonce: 1,
       receiptSuccess: true,
-      events: []
+      events: [],
+      data: null,
+      internalTransfers: [],
+      transitions: []
     },
     {
       hash: '0xfbc097da285c436171d4724c3a4fbf6aa6c309868bf717aa6bebf6bab09cdc10',
@@ -502,7 +605,10 @@ await client.getBlockTxs(59903, { page: 1 })
       timestamp: 1554172478877,
       nonce: 1,
       receiptSuccess: true,
-      events: []
+      events: [],
+      data: null,
+      internalTransfers: [],
+      transitions: []
     },
     {
       hash: '0xfa8bf7715d4cbe23524e72ab7920efac722be6284445dccdade4b0b6f6a4caac',
@@ -513,7 +619,10 @@ await client.getBlockTxs(59903, { page: 1 })
       timestamp: 1554172478877,
       nonce: 1,
       receiptSuccess: true,
-      events: []
+      events: [],
+      data: null,
+      internalTransfers: [],
+      transitions: []
     },
     {
       hash: '0xf9072f1aafad82a8f144b32b4404f685649fbcc82518d3c731835ec745211179',
@@ -524,7 +633,10 @@ await client.getBlockTxs(59903, { page: 1 })
       timestamp: 1554172478877,
       nonce: 1,
       receiptSuccess: true,
-      events: []
+      events: [],
+      data: null,
+      internalTransfers: [],
+      transitions: []
     },
     {
       hash: '0xf8fc4928dfd539f9bf84a52531c8b06d59a95615c7845e4cb37b5f92aae775cd',
@@ -535,7 +647,10 @@ await client.getBlockTxs(59903, { page: 1 })
       timestamp: 1554172478877,
       nonce: 1,
       receiptSuccess: true,
-      events: []
+      events: [],
+      data: null,
+      internalTransfers: [],
+      transitions: []
     },
     {
       hash: '0xf8b489747fa37488634eb2c14d38784729157ee9c46be59744a70dbd133cf587',
@@ -546,7 +661,10 @@ await client.getBlockTxs(59903, { page: 1 })
       timestamp: 1554172478877,
       nonce: 1,
       receiptSuccess: true,
-      events: []
+      events: [],
+      data: null,
+      internalTransfers: [],
+      transitions: []
     },
     {
       hash: '0xf895b7f488bbecc8c91e8101163c1a2fa2731e6af1ca70dd49f45a18ecb4ca81',
@@ -557,7 +675,10 @@ await client.getBlockTxs(59903, { page: 1 })
       timestamp: 1554172478877,
       nonce: 1,
       receiptSuccess: true,
-      events: []
+      events: [],
+      data: null,
+      internalTransfers: [],
+      transitions: []
     },
     {
       hash: '0xf8339e2ae31695d1ca04a9fd238029f9c75de36665f06726fe0d5096aad85b8b',
@@ -568,8 +689,10 @@ await client.getBlockTxs(59903, { page: 1 })
       timestamp: 1554172478877,
       nonce: 1,
       receiptSuccess: true,
-      events: []
-    },
+      events: [],
+      data: null,
+      internalTransfers: [],
+      transitions: []    },
     {
       hash: '0xf81b71e96f13760d405f88b7f97ee7a4ef71174e7018d041b03c0f27a3760b4b',
       from: 'zil1xrr4s95lsgxur9seqp34ck5g7ml7relmp7v5rz',
@@ -579,8 +702,10 @@ await client.getBlockTxs(59903, { page: 1 })
       timestamp: 1554172478877,
       nonce: 1,
       receiptSuccess: true,
-      events: []
-    },
+      events: [],
+      data: null,
+      internalTransfers: [],
+      transitions: []    },
     {
       hash: '0xf78f7c922e5b4134020ce0f3db293b7a73a3eb417b25cf9ec519aab78355d216',
       from: 'zil17m0k2yrwkwakgg20hncpmd5sqdsl2qfhdhncds',
@@ -590,8 +715,10 @@ await client.getBlockTxs(59903, { page: 1 })
       timestamp: 1554172478877,
       nonce: 1,
       receiptSuccess: true,
-      events: []
-    },
+      events: [],
+      data: null,
+      internalTransfers: [],
+      transitions: []    },
     {
       hash: '0xf78f0b36d102e3ef84df276400a0c3ae226a822df89204a7a525bda7f87b39c7',
       from: 'zil1df9a5sjwc2z26nt04u8tzyepp4m8ffvav4m6r3',
@@ -601,8 +728,10 @@ await client.getBlockTxs(59903, { page: 1 })
       timestamp: 1554172478877,
       nonce: 1,
       receiptSuccess: true,
-      events: []
-    },
+      events: [],
+      data: null,
+      internalTransfers: [],
+      transitions: []    },
     {
       hash: '0xf74a6e9bd7966c3511ef64babcef2ae3ce5d92f3385bd27f1385615ba830ab35',
       from: 'zil1zyz8prlg4d8vgd4v33y5j8chzn5tuerlue9lst',
@@ -612,8 +741,10 @@ await client.getBlockTxs(59903, { page: 1 })
       timestamp: 1554172478877,
       nonce: 1,
       receiptSuccess: true,
-      events: []
-    },
+      events: [],
+      data: null,
+      internalTransfers: [],
+      transitions: []    },
     {
       hash: '0xf73f85115573583f3e9df51311b309c17671e400e0627d6637dad64bb590e4d8',
       from: 'zil1g3s4wcum26qxansyd0kyyxl7fua5gj8hataw72',
@@ -623,8 +754,10 @@ await client.getBlockTxs(59903, { page: 1 })
       timestamp: 1554172478877,
       nonce: 1,
       receiptSuccess: true,
-      events: []
-    },
+      events: [],
+      data: null,
+      internalTransfers: [],
+      transitions: []    },
     {
       hash: '0xf73c0822667907d34d8c68ce479cac1d135858675fa1c6744a4fbbe0b2a67855',
       from: 'zil1lv6ndxd32z6tva3umadggmhat94swsk3ze24xt',
@@ -634,8 +767,10 @@ await client.getBlockTxs(59903, { page: 1 })
       timestamp: 1554172478877,
       nonce: 1,
       receiptSuccess: true,
-      events: []
-    },
+      events: [],
+      data: null,
+      internalTransfers: [],
+      transitions: []    },
     {
       hash: '0xf6f31a96e497dfee0d365ad3c82a4c7cea79530a22a2dcd1bee4a951b755d881',
       from: 'zil15w6xm7uhlng98qflsqfjf8u3kw785nh42yyhz4',
@@ -645,8 +780,10 @@ await client.getBlockTxs(59903, { page: 1 })
       timestamp: 1554172478877,
       nonce: 1,
       receiptSuccess: true,
-      events: []
-    },
+      events: [],
+      data: null,
+      internalTransfers: [],
+      transitions: []    },
     {
       hash: '0xf59bc4f6e7d0f242850f54cd05405d44996057ce24f358425f74672099166a16',
       from: 'zil1fmp5jhpxhj4g3zgq5nymwcnpnuwftq0fzcu5yw',
@@ -656,8 +793,10 @@ await client.getBlockTxs(59903, { page: 1 })
       timestamp: 1554172478877,
       nonce: 1,
       receiptSuccess: true,
-      events: []
-    },
+      events: [],
+      data: null,
+      internalTransfers: [],
+      transitions: []    },
     {
       hash: '0xf53b2045870539c2a2afbc2198f55059477f2a366b1671a2a31303e351836385',
       from: 'zil19zjpgvsm2nh3qf5r2c0k2gfyznnnp39mxfvqua',
@@ -667,8 +806,10 @@ await client.getBlockTxs(59903, { page: 1 })
       timestamp: 1554172478877,
       nonce: 1,
       receiptSuccess: true,
-      events: []
-    },
+      events: [],
+      data: null,
+      internalTransfers: [],
+      transitions: []    },
     {
       hash: '0xf4effdc7b51e640031d296db79f06581355afb2962898ad0927997d65562e7df',
       from: 'zil1dvugerq6rg35jxvplvmx7c3w5rvset3rt4fk7x',
@@ -678,8 +819,10 @@ await client.getBlockTxs(59903, { page: 1 })
       timestamp: 1554172478877,
       nonce: 1,
       receiptSuccess: true,
-      events: []
-    },
+      events: [],
+      data: null,
+      internalTransfers: [],
+      transitions: []    },
     {
       hash: '0xf4e059c173886bd7ff2a752df35f056a04152957079eb5a81de8d28027a925f7',
       from: 'zil17kd4gs50y8mhj7f6e5ryq4qwpwp4tvrn8cdhue',
@@ -689,8 +832,10 @@ await client.getBlockTxs(59903, { page: 1 })
       timestamp: 1554172478877,
       nonce: 1,
       receiptSuccess: true,
-      events: []
-    },
+      events: [],
+      data: null,
+      internalTransfers: [],
+      transitions: []    },
     {
       hash: '0xf415e05851f7e94437f54e8ad4616d909bd082c1af746aca952582a315f0ba11',
       from: 'zil10dapalzz0gua9z9gkrm6rdfg0j33ypq4ey37dm',
@@ -700,7 +845,10 @@ await client.getBlockTxs(59903, { page: 1 })
       timestamp: 1554172478877,
       nonce: 1,
       receiptSuccess: true,
-      events: []
+      events: [],
+      data: null,
+      internalTransfers: [],
+      transitions: []
     },
     {
       hash: '0xf3c9bebca62fcb2362e4a55d6bdbd9def62c1de6ac5f561e934faa0428f1bd58',
@@ -711,7 +859,10 @@ await client.getBlockTxs(59903, { page: 1 })
       timestamp: 1554172478877,
       nonce: 1,
       receiptSuccess: true,
-      events: []
+      events: [],
+      data: null,
+      internalTransfers: [],
+      transitions: []
     },
     {
       hash: '0xf3545f099634bff0a536d9f8dfa74e361e1691b4c14df110b8099e4611622b6f',
@@ -722,7 +873,10 @@ await client.getBlockTxs(59903, { page: 1 })
       timestamp: 1554172478877,
       nonce: 1,
       receiptSuccess: true,
-      events: []
+      events: [],
+      data: null,
+      internalTransfers: [],
+      transitions: []
     },
     {
       hash: '0xf2a8773c01d5f3df44bcfa529b49118cf90d261ff63087609651cdc336f177f7',
@@ -733,7 +887,10 @@ await client.getBlockTxs(59903, { page: 1 })
       timestamp: 1554172478877,
       nonce: 1,
       receiptSuccess: true,
-      events: []
+      events: [],
+      data: null,
+      internalTransfers: [],
+      transitions: []
     }
   ],
   totalDocs: 890,
