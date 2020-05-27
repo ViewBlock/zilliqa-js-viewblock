@@ -1,5 +1,6 @@
 import rpc from './rpc'
 import vb from './viewblock'
+import getSubscribe from './socket'
 
 import toHex from './fn/toHex'
 
@@ -37,6 +38,8 @@ Get them on https://viewblock.io by creating a free account and an API key.`)
 
   return {
     ...rpcMethods,
+
+    subscribe: getSubscribe(apiKey),
 
     getBlock: (height, opts) => vb(`/v1/zilliqa/blocks/${height}`, getOpts(opts)),
     getBlockTxs: (height, opts = {}) =>

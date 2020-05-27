@@ -2,6 +2,7 @@ import test from 'ava'
 
 import Zilliqa from '../src'
 import toHex from '../src/fn/toHex'
+import checkFields from '../src/fn/checkFields'
 
 const client = Zilliqa({
   apiKey: process.env.API_KEY,
@@ -17,7 +18,7 @@ test('[Main] Light client should only have rpc methods', t => {
 })
 
 test('[Main] Full client should have all methods', t => {
-  t.is(Object.keys(client).length, 9)
+  t.is(Object.keys(client).length, 10)
 })
 
 test('[Transaction] getTx', async t => {
@@ -311,4 +312,51 @@ test('[Misc] getGasPrice', async t => {
 
   t.truthy(gas)
   t.truthy(gas > 0)
+})
+
+test('[Socket] Throws with empty subscribe', async t => {
+  await t.throwsAsync(client.subscribe())
+})
+
+test('[Socket] Throws with wrong subscribe', async t => {
+  await t.throwsAsync(client.subscribe('yolo'))
+})
+
+test('[Socket] Throws with an invalid key', async t => {
+  const client = Zilliqa({ apiKey: 'yolo' })
+
+  const err = await t.throwsAsync(client.subscribe('transaction'))
+  t.is(err.message, 'Login failed')
+})
+
+test.cb('[Socket] Basic', t => {
+  const txFields = [
+    'from',
+    'to',
+    'value',
+    'hash',
+    'blockHeight',
+    'internalTransfers',
+    'fee',
+    'ts',
+    'chain',
+  ]
+
+  client.subscribe('transaction', tx => {
+    checkFields(t, tx, txFields)
+    t.end()
+  })
+
+  client.subscribe('block', block => {
+    checkFields(t, block, ['timestamp', 'status', 'chain', 'network', 'height'])
+    t.end()
+  })
+
+  client.subscribe(
+    { event: 'addressTx', param: 'zil1z3zky3kv20f37z3wkq86qfy00t4a875fxxw7sw' },
+    tx => {
+      checkFields(t, tx, txFields)
+      t.end()
+    },
+  )
 })

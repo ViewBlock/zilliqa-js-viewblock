@@ -5,14 +5,15 @@
   "scripts": {
     "prepare": "yarn build",
     "build": "rm -rf dist && babel src -d dist",
-    "test": "ava --timeout=10s -v",
+    "test": "ava -v",
     "lint": "eslint src test",
-    "cover": "nyc ava",
+    "cover": "nyc yarn test",
     "report": "yarn cover && nyc report --reporter=text-lcov | coveralls"
   },
   "dependencies": {
     "@zilliqa-js/crypto": "^0.9.1",
-    "node-fetch": "^2.6.0"
+    "node-fetch": "^2.6.0",
+    "socketcluster-client": "^14.2.2"
   },
   "devDependencies": {
     "@babel/cli": "^7.8.4",
@@ -39,7 +40,8 @@
     "files": [
       "test/**/*",
       "!test/utils.js"
-    ]
+    ],
+    "timeout": "2m"
   },
   "author": "Balthazar Gronon <b@ashlar.io>",
   "license": "MIT"

@@ -19,6 +19,11 @@
 - [Blocks](#blocks)
   * [getBlock](#getblock)
   * [getBlockTxs](#getblocktxs)
+- [Subscriptions](#subscriptions)
+  * [block](#block)
+  * [transaction](#transaction)
+  * [addressTx](#addressTx)
+  * [contractEvent](#contractEvent)
 - [Misc](#misc)
   * [getGasPrice](#getgasprice)
 
@@ -908,6 +913,44 @@ await client.getBlockTxs(59903, { page: 1 })
 ```
 
 </details>
+
+### Subscriptions
+
+Allows to listen on a variety of events.
+
+> :warning: We do not guarantee either the order upon which the messages are sent, nor that all the messages will be delivered successfully (typically in case of an outage or disruption of service).
+
+#### block
+
+Subscribe to new blocks.
+
+```js
+client.subscribe('block', console.log)
+```
+
+#### transaction
+
+Subscribe to new transactions.
+
+```js
+client.subscribe('transaction', console.log)
+```
+
+#### addressTx
+
+Subscribe to transactions made to or from a specific address.
+
+```js
+client.subscribe({ event: 'addressTx', param: 'zil1gqww6yq9d9nefhg3rec989kxsqs4zm8dzeyr0q' }, console.log)
+```
+
+#### contractEvent
+
+Subscribe to events emitted by one contract.
+
+```js
+client.subscribe({ event: 'contractEvent', param: 'zil1vszj220406ez4gglpf6jvlds5jkszju63kpvax' }, console.log)
+```
 
 ### Misc
 
