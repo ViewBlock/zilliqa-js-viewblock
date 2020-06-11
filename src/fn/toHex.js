@@ -1,11 +1,13 @@
 import { fromBech32Address } from '@zilliqa-js/crypto'
 
+const zilReg = /^zil1[qpzry9x8gf2tvdw0s3jn54khce6mua7l]{38}$/
+
 export default address => {
   if (address.startsWith('0x')) {
     return address.substr(2)
   }
 
-  if (!address.startsWith('zil')) {
+  if (!address.match(zilReg)) {
     return address
   }
 
