@@ -1,7 +1,12 @@
 import socketCluster from 'socketcluster-client'
 
 const options = {
-  host: 'live.viewblock.io:3001',
+  hostname: 'live.viewblock.io',
+  path: '/',
+  port: 444,
+  secure: true,
+
+  connectTimeout: 10e3,
   autoConnect: true,
   autoReconnect: true,
   autoReconnectOptions: {
@@ -33,7 +38,7 @@ const getSocket = key =>
       })
     })
 
-    socket.on('error', f => f)
+    socket.on('error', console.log)
 
     return socket
   })
