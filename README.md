@@ -324,6 +324,111 @@ await client.getAddressTxs('zil16awfafxs789g8nthnm5s9p4l8vnxs5zpfr3upr', { page:
 
 </details>
 
+#### getAddressTokenTxs
+
+Get the token transactions associated with an address. Note `token` can be specified
+to filter for specific token transactions.
+
+| Param    | Type     | Required | Default   |
+| -------- | -------- | -------- | --------- |
+| page     | `Number` | `false`  | `1`       |
+| token    | `String` | `false`  |           |
+
+```js
+await client.getAddressTokenTxs('zil1my8ju5uvur0cnjp88jknkclvgj3ufmvz5pxyml', {
+  page: 1,
+  token: 'zil1l8mn5r5urrlxzf6q9z790zz2c5a9ya8366hzre',
+})
+```
+
+<details>
+<summary>Output</summary>
+
+```js
+{
+  docs: [
+    {
+      hash: '0x3c60b3194a175fa4d484fb3074f3bd7ba9bfd62c7d6dc1da6f86a4c948bb7f92',
+      from: 'zil1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq9yf6pz',
+      to: 'zil1my8ju5uvur0cnjp88jknkclvgj3ufmvz5pxyml',
+      value: '0.02',
+      tokenAddress: 'zil1l8mn5r5urrlxzf6q9z790zz2c5a9ya8366hzre',
+      blockHeight: 1776290,
+      timestamp: 1599139330519,
+      direction: 'in',
+    },
+    {
+      hash: '0x7b7555d456cf4415c1f58af26a8b8788ebb3431c41ccb893d0c3a06c2157c064',
+      from: 'zil1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq9yf6pz',
+      to: 'zil1my8ju5uvur0cnjp88jknkclvgj3ufmvz5pxyml',
+      value: '0',
+      tokenAddress: 'zil1l8mn5r5urrlxzf6q9z790zz2c5a9ya8366hzre',
+      blockHeight: 1776298,
+      timestamp: 1599139497307,
+      direction: 'in',
+    },
+    {
+      hash: '0xc5f582866251b022ac32e98a6e4598319288234ef8722b04bf5c285122094af1',
+      from: 'zil1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq9yf6pz',
+      to: 'zil1my8ju5uvur0cnjp88jknkclvgj3ufmvz5pxyml',
+      value: '0.01',
+      tokenAddress: 'zil1l8mn5r5urrlxzf6q9z790zz2c5a9ya8366hzre',
+      blockHeight: 1776348,
+      timestamp: 1599140579375,
+      direction: 'in',
+    },
+    {
+      hash: '0x7b1356842d1e595384ee2de38df7fc24ed1a57f5df65c3cc23c7b4f02415cdeb',
+      from: 'zil1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq9yf6pz',
+      to: 'zil1my8ju5uvur0cnjp88jknkclvgj3ufmvz5pxyml',
+      value: '0.04',
+      tokenAddress: 'zil1l8mn5r5urrlxzf6q9z790zz2c5a9ya8366hzre',
+      blockHeight: 1776384,
+      timestamp: 1599141333323,
+      direction: 'in',
+    },
+    {
+      hash: '0x7e1da8fb622bfb6203d65573cb4367077f85fd65b90697fd82ca3e8e145b0841',
+      from: 'zil1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq9yf6pz',
+      to: 'zil1my8ju5uvur0cnjp88jknkclvgj3ufmvz5pxyml',
+      value: '0',
+      tokenAddress: 'zil1l8mn5r5urrlxzf6q9z790zz2c5a9ya8366hzre',
+      blockHeight: 1776390,
+      timestamp: 1599141458698,
+      direction: 'in',
+    },
+    {
+      hash: '0xe0094c46b4bd1fb0ef0fbb623c9d0431f835d850a28e8a5b81886ca7e91061b2',
+      from: 'zil1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq9yf6pz',
+      to: 'zil1my8ju5uvur0cnjp88jknkclvgj3ufmvz5pxyml',
+      value: '0',
+      tokenAddress: 'zil1l8mn5r5urrlxzf6q9z790zz2c5a9ya8366hzre',
+      blockHeight: 1776704,
+      timestamp: 1599148162726,
+      direction: 'in',
+    },
+    {
+      hash: '0x785f21e312a10307907ac3f06da0d6056056082fa0265ef64fa8b402676425ab',
+      from: 'zil1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq9yf6pz',
+      to: 'zil1my8ju5uvur0cnjp88jknkclvgj3ufmvz5pxyml',
+      value: '0.0196969696',
+      tokenAddress: 'zil1l8mn5r5urrlxzf6q9z790zz2c5a9ya8366hzre',
+      blockHeight: 1776986,
+      timestamp: 1599154120380,
+      direction: 'in',
+    },
+  ],
+  page: 1,
+  totalPages: 1,
+  total: 7,
+  limit: 25,
+  nextPage: null,
+  prevPage: null
+}
+```
+
+</details>
+
 ### Smart Contracts
 
 #### getSCInit

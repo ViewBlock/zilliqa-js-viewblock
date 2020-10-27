@@ -49,7 +49,11 @@ Get them on https://viewblock.io by creating a free account and an API key.`)
       vb(`/v1/zilliqa/addresses/${hash}`, getOpts(opts)).then(res => res && res[0]),
     getAddressTxs: (hash, opts = {}) =>
       vb(`/v2/zilliqa/addresses/${hash}/txs`, getOpts({ ...opts, query: { page: opts.page } })),
-
+    getAddressTokenTxs: (hash, opts = {}) =>
+      vb(
+        `/v2/zilliqa/addresses/${hash}/txs`,
+        getOpts({ ...opts, query: { type: 'tokens', page: opts.page, token: opts.token } }),
+      ),
     getTx: (hash, opts) => vb(`/v1/zilliqa/txs/${hash}`, getOpts(opts)),
   }
 }
