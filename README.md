@@ -13,6 +13,7 @@
 - [Addresses](#addresses)
   * [getAddress](#getaddress)
   * [getAddressTxs](#getaddresstxs)
+  * [getAddressTokenTxs](#getaddresstokentxs)
 - [Smart Contracts](#smart-contracts)
   * [getSCInit](#getscinit)
   * [getSCState](#getscstate)
