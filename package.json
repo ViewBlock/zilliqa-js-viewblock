@@ -11,25 +11,25 @@
     "report": "yarn cover && nyc report --reporter=text-lcov | coveralls"
   },
   "dependencies": {
-    "@zilliqa-js/crypto": "^0.9.1",
-    "node-fetch": "^2.6.0",
-    "socketcluster-client": "^14.2.2"
+    "@zilliqa-js/crypto": "^3.3.4",
+    "node-fetch": "^3.2.3",
+    "socketcluster-client": "^16.0.4"
   },
   "devDependencies": {
-    "@babel/cli": "^7.8.4",
-    "@babel/core": "^7.9.6",
+    "@babel/cli": "^7.17.6",
+    "@babel/core": "^7.17.7",
     "@babel/polyfill": "^7.8.7",
-    "@babel/preset-env": "^7.9.6",
-    "@babel/register": "^7.9.0",
-    "ava": "^3.8.2",
+    "@babel/preset-env": "^7.16.11",
+    "@babel/register": "^7.17.7",
+    "ava": "^4.1.0",
     "babel-eslint": "^10.1.0",
-    "coveralls": "^3.1.0",
-    "dotenv": "^8.2.0",
-    "eslint": "^7.0.0",
-    "eslint-config-prettier": "^6.11.0",
+    "coveralls": "^3.1.1",
+    "dotenv": "^16.0.0",
+    "eslint": "^8.11.0",
+    "eslint-config-prettier": "^8.5.0",
     "eslint-config-zavatta": "^6.0.3",
-    "nyc": "^15.0.1",
-    "prettier": "^2.0.5"
+    "nyc": "^15.1.0",
+    "prettier": "^2.5.1"
   },
   "ava": {
     "require": [
@@ -46,3 +46,4 @@
   "author": "Balthazar Gronon <b@ashlar.io>",
   "license": "MIT"
 }
+
