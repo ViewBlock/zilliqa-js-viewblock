@@ -1,4 +1,4 @@
-import { fromBech32Address } from '@zilliqa-js/crypto'
+import crypto from '@zilliqa-js/crypto'
 
 const zilReg = /^zil1[qpzry9x8gf2tvdw0s3jn54khce6mua7l]{38}$/
 
@@ -11,7 +11,7 @@ export default address => {
     return address
   }
 
-  const hex = fromBech32Address(address)
+  const hex = crypto.fromBech32Address(address)
 
   return hex.substr(2)
 }

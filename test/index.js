@@ -4,9 +4,7 @@ import Zilliqa from '../src'
 import toHex from '../src/fn/toHex'
 import checkFields from '../src/fn/checkFields'
 
-const client = Zilliqa({
-  apiKey: process.env.API_KEY,
-})
+const client = Zilliqa({ apiKey: process.env.API_KEY })
 
 const RESERVE_CONTRACT = 'zil1cm2x24v7807w7yjvmkz0am0y37vkys8lwtxsth'
 const OLD_TEST_ADDR = 'zil1hqn9w4tf23x8lxh6vk5jv9hupt0s85gemyetmu'
@@ -156,8 +154,7 @@ test('[Address] getAddressTxs', async t => {
       receiptSuccess: true,
       events: [],
       internalTransfers: [],
-      data:
-        '[{"vname":"_scilla_version","type":"Uint32","value":"0"},{"vname":"contractOwner","type":"ByStr20","value":"0xb826575569544c7f9afa65a92616fc0adf03d119"}]',
+      data: '[{"vname":"_scilla_version","type":"Uint32","value":"0"},{"vname":"contractOwner","type":"ByStr20","value":"0xb826575569544c7f9afa65a92616fc0adf03d119"}]',
       transitions: [],
     },
     {
@@ -175,8 +172,7 @@ test('[Address] getAddressTxs', async t => {
       receiptSuccess: true,
       events: [],
       internalTransfers: [],
-      data:
-        '[{"vname":"_scilla_version","type":"Uint32","value":"0"},{"vname":"contractOwner","type":"ByStr20","value":"0xb826575569544c7f9afa65a92616fc0adf03d119"}]',
+      data: '[{"vname":"_scilla_version","type":"Uint32","value":"0"},{"vname":"contractOwner","type":"ByStr20","value":"0xb826575569544c7f9afa65a92616fc0adf03d119"}]',
       transitions: [],
     },
     {
@@ -194,8 +190,7 @@ test('[Address] getAddressTxs', async t => {
       receiptSuccess: true,
       events: [],
       internalTransfers: [],
-      data:
-        '[{"vname":"_scilla_version","type":"Uint32","value":"0"},{"vname":"contractOwner","type":"ByStr20","value":"0xb826575569544c7f9afa65a92616fc0adf03d119"}]',
+      data: '[{"vname":"_scilla_version","type":"Uint32","value":"0"},{"vname":"contractOwner","type":"ByStr20","value":"0xb826575569544c7f9afa65a92616fc0adf03d119"}]',
       transitions: [],
     },
     {
@@ -213,8 +208,7 @@ test('[Address] getAddressTxs', async t => {
       receiptSuccess: true,
       events: [],
       internalTransfers: [],
-      data:
-        '[{"vname":"_scilla_version","type":"Uint32","value":"0"},{"vname":"contractOwner","type":"ByStr20","value":"0xb826575569544c7f9afa65a92616fc0adf03d119"}]',
+      data: '[{"vname":"_scilla_version","type":"Uint32","value":"0"},{"vname":"contractOwner","type":"ByStr20","value":"0xb826575569544c7f9afa65a92616fc0adf03d119"}]',
       transitions: [],
     },
     {
@@ -246,7 +240,7 @@ test('[Address] getAddressTxs', async t => {
   t.is(next.prevPage, 1)
 })
 
-test('[Address] getAddressTokenTxs', async t => {
+test.skip('[Address] getAddressTokenTxs', async t => {
   const invalid = await client.getAddressTokenTxs(OLD_TOKEN_TEST_ADDR)
 
   t.truthy(invalid)
@@ -438,14 +432,14 @@ test('[Socket] Throws with wrong subscribe', async t => {
   await t.throwsAsync(client.subscribe('yolo'))
 })
 
-test('[Socket] Throws with an invalid key', async t => {
+test.skip('[Socket] Throws with an invalid key', async t => {
   const client = Zilliqa({ apiKey: 'yolo' })
 
   const err = await t.throwsAsync(client.subscribe('transaction'))
   t.is(err.message, 'Login failed')
 })
 
-test.cb('[Socket] Basic', t => {
+test.skip('[Socket] Basic', t => {
   const txFields = [
     'from',
     'to',
