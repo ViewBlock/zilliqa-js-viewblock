@@ -1,6 +1,6 @@
 import fetch from 'node-fetch'
 
-import { NETWORK_URLS } from './config'
+import { NETWORK_URLS } from './config.js'
 
 export default (body, { network, agent = null }) => {
   const url = NETWORK_URLS[network]

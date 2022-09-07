@@ -1,8 +1,8 @@
-import rpc from './rpc'
-import vb from './viewblock'
-import getSubscribe from './socket'
+import rpc from './rpc.js'
+import vb from './viewblock.js'
+import getSubscribe from './socket.js'
 
-import toHex from './fn/toHex'
+import toHex from './fn/toHex.js'
 
 export default ({ apiKey, network = 'mainnet', agent } = {}) => {
   const isAnon = !apiKey
